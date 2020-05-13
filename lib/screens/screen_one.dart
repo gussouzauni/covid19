@@ -7,7 +7,7 @@ class ScreenOne extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Search'),
-        //automaticallyImplyLeading: true,
+        centerTitle: true,
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.search),
@@ -17,7 +17,6 @@ class ScreenOne extends StatelessWidget {
           )
         ],
       ),
-      body: Container(),
     );
   }
 }
