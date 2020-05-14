@@ -15,7 +15,7 @@ class PageViewWidget extends StatelessWidget {
       right: 0,
       child: PageView(
         physics: BouncingScrollPhysics(),
-        children: <Widget>[CardWidget(), CardWidget()],
+        children: <Widget>[CardWidget(), CardWidget(), CardWidget()],
       ),
     );
   }
