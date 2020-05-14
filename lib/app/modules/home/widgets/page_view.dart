@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 
 class PageViewWidget extends StatelessWidget {
   final double top;
+  final ValueChanged<int> onChanged;
 
-  const PageViewWidget({Key key, this.top}) : super(key: key);
+  const PageViewWidget({Key key, this.top, this.onChanged}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,6 +15,7 @@ class PageViewWidget extends StatelessWidget {
       left: 0,
       right: 0,
       child: PageView(
+        onPageChanged: onChanged,
         physics: BouncingScrollPhysics(),
         children: <Widget>[CardWidget(), CardWidget(), CardWidget()],
       ),

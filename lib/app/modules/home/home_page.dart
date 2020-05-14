@@ -1,12 +1,14 @@
 import 'package:api_rest1/app/modules/home/widgets/bottom_navigation.dart';
-import 'package:api_rest1/app/modules/home/widgets/data_search.dart';
-import 'package:api_rest1/app/modules/home/widgets/page_view_widget.dart';
+import 'package:api_rest1/app/modules/home/widgets/my_dots_app.dart';
+import 'package:api_rest1/app/modules/home/widgets/page_view.dart';
+import 'package:api_rest1/app/modules/home/widgets/search/data_search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'home_controller.dart';
 
 class HomePage extends StatefulWidget {
   final String title;
+
   const HomePage({Key key, this.title = "Home"}) : super(key: key);
 
   @override
@@ -16,13 +18,21 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends ModularState<HomePage, HomeController> {
   //use 'controller' variable to access controller
 
+  int _currentIndex;
+
+  @override
+  void initState() {
+    _currentIndex = 0;
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
+    double _screenheight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xff7159c1),
-        title: Text('Pesquisa'),
-        centerTitle: true,
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.search),
@@ -36,7 +46,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
               onPressed: () {
                 Scaffold.of(context).showSnackBar(
                   SnackBar(
-                    duration: Duration(seconds: 2),
+                    duration: Duration(seconds: 1),
                     elevation: 3,
                     backgroundColor: const Color(0xff7159c1),
                     content: Text(
@@ -53,9 +63,21 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
         ],
       ),
       body: Stack(
+        alignment: Alignment.topCenter,
         children: <Widget>[
           PageViewWidget(
-            top: 10,
+            top: 0,
+            onChanged: (index) {
+              setState(() {
+                _currentIndex = index;
+              });
+            },
+          ),
+          Positioned(
+            top: _screenheight * .59,
+            child: MyDotsApp(
+              currentIndex: _currentIndex,
+            ),
           )
         ],
       ),
