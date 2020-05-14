@@ -6,7 +6,8 @@ class ScreenOne extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Search'),
+        backgroundColor: const Color(0xff7159c1),
+        title: Text('Pesquisa'),
         centerTitle: true,
         actions: <Widget>[
           IconButton(
@@ -14,6 +15,23 @@ class ScreenOne extends StatelessWidget {
             onPressed: () {
               showSearch(context: context, delegate: DataSearch());
             },
+          ),
+          Builder(
+            builder: (context) => IconButton(
+              icon: Icon(Icons.favorite),
+              onPressed: () {
+                Scaffold.of(context).showSnackBar(
+                  SnackBar(
+                    duration: Duration(seconds: 2),
+                    elevation: 3,
+                    content: Text(
+                      'Favoritos não implementado!',
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                );
+              },
+            ),
           )
         ],
       ),

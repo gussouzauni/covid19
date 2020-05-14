@@ -1,3 +1,4 @@
+import 'package:api_rest1/widgets/custom_results.dart';
 import 'package:flutter/material.dart';
 
 class DataSearch extends SearchDelegate<String> {
@@ -30,16 +31,10 @@ class DataSearch extends SearchDelegate<String> {
 
   @override
   Widget buildResults(BuildContext context) {
-    return Center(
-      child: Container(
-        color: Colors.red,
-        width: 100,
-        height: 80,
-        child: Text(
-          city,
-          style: TextStyle(color: Colors.amber),
-        ),
-      ),
+    return CustomResult(
+      text: city,
+      image:
+          'https://www.teclasap.com.br/wp-content/uploads/2011/09/city-x-town.png',
     );
   }
 
@@ -48,14 +43,28 @@ class DataSearch extends SearchDelegate<String> {
     final suggestionsList = query.isEmpty
         ? recentCities
         : cities.where((p) => p.startsWith(query)).toList();
-
     return ListView.builder(
       itemBuilder: (context, index) => ListTile(
-        onTap: () {
-          city = (suggestionsList[index]);
-          showResults(context);
-        },
-        leading: Icon(Icons.location_city),
+        onTap: () {},
+        leading: Padding(
+          padding: const EdgeInsets.all(6.0),
+          child: CircleAvatar(
+            radius: 20.0,
+            backgroundImage: NetworkImage(
+                "https://img.dicasdehoteis.net/2017/12/amsterdam-hoteis-baratos-848x350.jpg"),
+          ),
+        ),
+        trailing: IconButton(
+          icon: Icon(
+            Icons.arrow_forward_ios,
+            size: 16,
+          ),
+          color: Color(0xff7159c1),
+          onPressed: () {
+            city = (suggestionsList[index]);
+            showResults(context);
+          },
+        ),
         title: RichText(
           text: TextSpan(
               text: suggestionsList[index].substring(0, query.length),
@@ -64,7 +73,10 @@ class DataSearch extends SearchDelegate<String> {
               children: [
                 TextSpan(
                     text: suggestionsList[index].substring(query.length),
-                    style: TextStyle(color: Colors.grey))
+                    style: TextStyle(
+                        color: Color(0xff7159c1),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16))
               ]),
         ),
       ),
