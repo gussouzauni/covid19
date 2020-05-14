@@ -1,14 +1,5 @@
-import 'package:api_rest1/screens/screen_one.dart';
 import 'package:flutter/material.dart';
+import 'package:api_rest1/app/app_module.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Home',
-      home: ScreenOne(),
-    );
-  }
-}
+void main() => runApp(ModularApp(module: AppModule()));

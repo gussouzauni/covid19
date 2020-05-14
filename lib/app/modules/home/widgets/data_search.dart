@@ -1,4 +1,4 @@
-import 'package:api_rest1/widgets/custom_results.dart';
+import 'package:api_rest1/app/modules/home/widgets/custom_results.dart';
 import 'package:flutter/material.dart';
 
 class DataSearch extends SearchDelegate<String> {
