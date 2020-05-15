@@ -1,6 +1,7 @@
 import 'package:api_rest1/app/modules/home/widgets/bottom_navigation.dart';
 import 'package:api_rest1/app/modules/home/widgets/my_dots_app.dart';
-import 'package:api_rest1/app/modules/home/widgets/page_view.dart';
+import 'package:api_rest1/app/modules/home/widgets/page_view_one.dart';
+import 'package:api_rest1/app/modules/home/widgets/page_view_two.dart';
 import 'package:api_rest1/app/modules/home/widgets/search/data_search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -17,12 +18,12 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends ModularState<HomePage, HomeController> {
   //use 'controller' variable to access controller
-
   int _currentIndex;
 
   @override
   void initState() {
     _currentIndex = 0;
+
     super.initState();
   }
 
@@ -33,6 +34,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xff7159c1),
+        leading: Icon(Icons.star_border),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.search),
@@ -78,7 +80,31 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
             child: MyDotsApp(
               currentIndex: _currentIndex,
             ),
-          )
+          ),
+          Positioned(
+            bottom: 10 + MediaQuery.of(context).padding.bottom,
+            left: 0,
+            right: 0,
+            height: _screenheight * 0.15,
+            child: Container(
+              color: Color(0xff7159c1),
+              child: ListView.builder(
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 10, vertical: 12),
+                    child: Container(
+                      width: 120,
+                      height: 50,
+                      color: Colors.white,
+                    ),
+                  );
+                },
+                physics: BouncingScrollPhysics(),
+                scrollDirection: Axis.horizontal,
+              ),
+            ),
+          ),
         ],
       ),
       bottomNavigationBar: BottomNavigationTiled(),

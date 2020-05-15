@@ -24,8 +24,6 @@ class _BottomNavigationTiledState extends State<BottomNavigationTiled> {
       items: [
         TitledNavigationBarItem(title: Text('Home'), icon: Icons.home),
         TitledNavigationBarItem(title: Text('Search'), icon: Icons.search),
-        TitledNavigationBarItem(
-            title: Text('Profile'), icon: Icons.person_outline),
       ],
     );
   }
