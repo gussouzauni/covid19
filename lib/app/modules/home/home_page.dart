@@ -1,7 +1,6 @@
 import 'package:api_rest1/app/modules/home/widgets/bottom_navigation.dart';
 import 'package:api_rest1/app/modules/home/widgets/my_dots_app.dart';
 import 'package:api_rest1/app/modules/home/widgets/page_view_one.dart';
-import 'package:api_rest1/app/modules/home/widgets/page_view_two.dart';
 import 'package:api_rest1/app/modules/home/widgets/search/data_search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -65,7 +64,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
         ],
       ),
       body: Stack(
-        alignment: Alignment.topCenter,
+        alignment: Alignment.center,
         children: <Widget>[
           PageViewWidget(
             top: 0,
@@ -89,10 +88,11 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
             child: Container(
               color: Color(0xff7159c1),
               child: ListView.builder(
+                itemCount: 10,
                 itemBuilder: (context, index) {
                   return Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 10, vertical: 12),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 8, vertical: 10),
                     child: Container(
                       width: 120,
                       height: 50,
