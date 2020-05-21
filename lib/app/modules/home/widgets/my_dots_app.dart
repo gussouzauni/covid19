@@ -4,7 +4,7 @@ class MyDotsApp extends StatelessWidget {
   final int currentIndex;
 
   Color getColor(int index) {
-    return index == currentIndex ? Color(0xff7159c1) : Colors.blueAccent;
+    return index == currentIndex ? Color(0xff28b2ce) : Colors.black;
   }
 
   const MyDotsApp({Key key, this.currentIndex}) : super(key: key);
@@ -36,7 +36,7 @@ class MyDotsApp extends StatelessWidget {
         ),
         SizedBox(
           width: 8,
-        )
+        ),
       ],
     );
   }

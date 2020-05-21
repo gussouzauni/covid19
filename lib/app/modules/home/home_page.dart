@@ -1,4 +1,5 @@
 import 'package:api_rest1/app/modules/home/widgets/bottom_navigation.dart';
+import 'package:api_rest1/app/modules/home/widgets/card_widget_covid.dart';
 import 'package:api_rest1/app/modules/home/widgets/my_dots_app.dart';
 import 'package:api_rest1/app/modules/home/widgets/page_view_one.dart';
 import 'package:api_rest1/app/modules/home/widgets/search/data_search.dart';
@@ -29,10 +30,9 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
   @override
   Widget build(BuildContext context) {
     double _screenheight = MediaQuery.of(context).size.height;
-
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xff7159c1),
+        backgroundColor: const Color(0xff12a5c2),
         leading: Icon(Icons.star_border),
         actions: <Widget>[
           IconButton(
@@ -81,30 +81,11 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
             ),
           ),
           Positioned(
-            bottom: 10 + MediaQuery.of(context).padding.bottom,
-            left: 0,
-            right: 0,
-            height: _screenheight * 0.15,
-            child: Container(
-              color: Color(0xff7159c1),
-              child: ListView.builder(
-                itemCount: 10,
-                itemBuilder: (context, index) {
-                  return Padding(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 8, vertical: 10),
-                    child: Container(
-                      width: 120,
-                      height: 50,
-                      color: Colors.white,
-                    ),
-                  );
-                },
-                physics: BouncingScrollPhysics(),
-                scrollDirection: Axis.horizontal,
-              ),
-            ),
-          ),
+              bottom: 5 + MediaQuery.of(context).padding.bottom,
+              left: 0,
+              right: 0,
+              height: _screenheight * 0.18,
+              child: CardWidgetSvg()),
         ],
       ),
       bottomNavigationBar: BottomNavigationTiled(),

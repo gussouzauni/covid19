@@ -12,7 +12,9 @@ dependencies:
   mobx: ^1.2.0
   flutter_modular: ^1.2.0
   titled_navigation_bar: 4.1.0
-  share: ^0.6.2+3
+  http: 0.12.1
+  flutter_svg: 0.17.4
+
   flutter:
     sdk: flutter
 
@@ -26,3 +28,11 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - lib/app/assets/icon1.svg
+    - lib/app/assets/icon2.svg
+    - lib/app/assets/icon3.svg
+    - lib/app/assets/state.png
+    - lib/app/assets/coronavirus1.png
+    - lib/app/assets/coronavirus2.png
+    - lib/app/assets/background.png

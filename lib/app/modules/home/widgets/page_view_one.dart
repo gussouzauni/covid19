@@ -1,4 +1,4 @@
-import 'package:api_rest1/app/modules/home/widgets/card_widget.dart';
+import 'card_widget_svg.dart';
 import 'package:flutter/material.dart';
 
 class PageViewWidget extends StatelessWidget {
@@ -20,12 +20,15 @@ class PageViewWidget extends StatelessWidget {
         children: <Widget>[
           CardWidget(
             color: 0xff7159c1,
+            image: 'lib/app/assets/icon1.svg',
           ),
           CardWidget(
             color: 0xff483D8B,
+            image: 'lib/app/assets/icon2.svg',
           ),
           CardWidget(
             color: 0xff00BFFF,
+            image: 'lib/app/assets/icon3.svg',
           ),
         ],
       ),

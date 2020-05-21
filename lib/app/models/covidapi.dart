@@ -1,21 +1,21 @@
 class CovidApi {
-  List<Data> data;
+  List<Data> covid;
 
-  CovidApi({this.data});
+  CovidApi({this.covid});
 
   CovidApi.fromJson(Map<String, dynamic> json) {
     if (json['data'] != null) {
-      data = new List<Data>();
+      covid = new List<Data>();
       json['data'].forEach((v) {
-        data.add(new Data.fromJson(v));
+        covid.add(new Data.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.data != null) {
-      data['data'] = this.data.map((v) => v.toJson()).toList();
+    if (this.covid != null) {
+      data['data'] = this.covid.map((v) => v.toJson()).toList();
     }
     return data;
   }
