@@ -41,7 +41,7 @@ class _CardWidgetSvgState extends State<CardWidgetSvg> {
                               fit: BoxFit.fill,
                               image: AssetImage('lib/app/assets/state.png'),
                             ),
-                            borderRadius: BorderRadius.circular(35)),
+                            borderRadius: BorderRadius.circular(30.0)),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.center,

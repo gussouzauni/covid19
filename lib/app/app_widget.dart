@@ -7,7 +7,7 @@ class AppWidget extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       navigatorKey: Modular.navigatorKey,
-      title: 'Flutter',
+      title: 'Covid-19',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),

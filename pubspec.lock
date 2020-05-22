@@ -43,6 +43,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.5"
+  bottom_navy_bar:
+    dependency: "direct main"
+    description:
+      name: bottom_navy_bar
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "5.4.0"
   build:
     dependency: transitive
     description:
@@ -485,13 +492,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.1+2"
-  titled_navigation_bar:
-    dependency: "direct main"
-    description:
-      name: titled_navigation_bar
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "4.1.0"
   typed_data:
     dependency: transitive
     description:
