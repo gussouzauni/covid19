@@ -22,7 +22,7 @@ abstract class _CovidApiStoreBase with Store {
 
   Future<CovidApi> loadCovidApi() async {
     try {
-      final response = await http.get(ConstsApi.base_url);
+      final response = await http.get(ConstApi.base_url);
       var decodeJson = jsonDecode(response.body);
       return CovidApi.fromJson(decodeJson);
     } catch (err) {

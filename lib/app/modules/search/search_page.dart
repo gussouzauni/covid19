@@ -12,12 +12,8 @@ class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
       body: Column(
-        children: <Widget>[Text('Search Page')],
-        //showSearch(context: context, delegate: DataSearch());
+        children: <Widget>[Text('Tela 2')],
       ),
     );
   }

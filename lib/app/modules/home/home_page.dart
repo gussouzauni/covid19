@@ -1,6 +1,8 @@
 import 'package:api_rest1/app/modules/home/widgets/card_widget_covid.dart';
 import 'package:api_rest1/app/modules/home/widgets/my_dots_app.dart';
 import 'package:api_rest1/app/modules/home/widgets/page_view_one.dart';
+import 'package:api_rest1/app/modules/search/search_page.dart';
+import 'package:api_rest1/app/modules/search/widgets/data_search.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -43,6 +45,12 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
       appBar: AppBar(
         backgroundColor: const Color(0xff12a5c2),
         actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {
+              showSearch(context: context, delegate: DataSearch());
+            },
+          ),
           Builder(
             builder: (context) => IconButton(
               icon: Icon(Icons.favorite),
@@ -113,28 +121,33 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
                   child: CardWidgetSvg()),
             ],
           ),
-          Container(
-            width: 30,
-            height: 30,
-            color: Colors.amber,
-          ),
+          SearchPage(),
         ],
       ),
       bottomNavigationBar: BottomNavyBar(
+        showElevation: false,
         selectedIndex: _currentPageIndex,
         onItemSelected: (index) {
           setState(() => _currentPageIndex = index);
+          _pageController.animateToPage(index,
+              duration: Duration(milliseconds: 200), curve: Curves.easeIn);
           _pageController.jumpToPage(index);
         },
         items: [
           BottomNavyBarItem(
             icon: Icon(Icons.apps),
-            title: Text('Home'),
-            activeColor: Colors.red,
+            title: Text(
+              'Covid',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+            ),
+            activeColor: Color(0xff12a5c2),
           ),
           BottomNavyBarItem(
-              icon: Icon(Icons.search),
-              title: Text('Pesquisa'),
+              icon: Icon(Icons.person),
+              title: Text(
+                'Perfil',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+              ),
               activeColor: Colors.purpleAccent),
         ],
       ),
