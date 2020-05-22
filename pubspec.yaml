@@ -36,3 +36,8 @@ flutter:
     - lib/app/assets/coronavirus1.png
     - lib/app/assets/coronavirus2.png
     - lib/app/assets/background.png
+    - lib/app/assets/death.png
+    - lib/app/assets/medical.png
+    - lib/app/assets/virus.png
+    - lib/app/assets/health.png
+    - lib/app/assets/time.png

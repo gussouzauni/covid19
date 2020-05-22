@@ -34,7 +34,15 @@ class _CardWidgetSvgState extends State<CardWidgetSvg> {
                   itemBuilder: (context, index) {
                     return GestureDetector(
                       onTap: () {
-                        _showDialog.createAlertDialog(context);
+                        var _covid = _covidApi.covid[index];
+                        _showDialog.createAlertDialog(
+                            context,
+                            _covid.state,
+                            _covid.cases,
+                            _covid.deaths,
+                            _covid.suspects,
+                            _covid.refuses,
+                            _covid.datetime);
                       },
                       child: Padding(
                         padding: const EdgeInsets.symmetric(
@@ -46,7 +54,7 @@ class _CardWidgetSvgState extends State<CardWidgetSvg> {
                               color: Color(0xff12a5c2),
                               image: DecorationImage(
                                 fit: BoxFit.fill,
-                                image: AssetImage(IconsApp.iconFour),
+                                image: AssetImage(IconsApp.iconSix),
                               ),
                               borderRadius: BorderRadius.circular(30.0)),
                           child: Column(
