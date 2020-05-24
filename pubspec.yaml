@@ -10,6 +10,7 @@ dependencies:
   dio: ^3.0.9
   flutter_mobx: ^1.1.0
   mobx: ^1.2.0
+  intl: 0.16.1
   flutter_modular: ^1.2.0
   bottom_navy_bar: 5.4.0
   http: 0.12.1

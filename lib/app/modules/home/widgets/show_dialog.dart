@@ -18,14 +18,19 @@ class ShowDialog extends StatelessWidget {
             elevation: 3,
             title: new Text(
               state,
+              style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.w600,
+                  color: Color(0xff12a5c2)),
               textAlign: TextAlign.center,
             ),
             content: Container(
-              color: Colors.amber,
-              width: double.maxFinite,
               height: double.maxFinite,
+              width: double.maxFinite,
+              decoration: new BoxDecoration(
+                  border: Border.all(color: Colors.amber, width: 2)),
               child: ListView(
-                padding: const EdgeInsets.all(10),
+                padding: const EdgeInsets.all(30.0),
                 children: <Widget>[
                   Container(
                       height: 70,
@@ -37,7 +42,13 @@ class ShowDialog extends StatelessWidget {
                             width: 40,
                             height: 40,
                           ),
-                          Text(cases.toString()),
+                          Text(
+                            cases.toString(),
+                            style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600,
+                                color: Color(0xff12a5c2)),
+                          ),
                         ],
                       )),
                   Container(
@@ -50,7 +61,13 @@ class ShowDialog extends StatelessWidget {
                             width: 40,
                             height: 40,
                           ),
-                          Text(deaths.toString()),
+                          Text(
+                            deaths.toString(),
+                            style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600,
+                                color: Color(0xff12a5c2)),
+                          ),
                         ],
                       )),
                   Container(
@@ -63,7 +80,13 @@ class ShowDialog extends StatelessWidget {
                             width: 40,
                             height: 40,
                           ),
-                          Text(suspects.toString()),
+                          Text(
+                            suspects.toString(),
+                            style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600,
+                                color: Color(0xff12a5c2)),
+                          ),
                         ],
                       )),
                   Container(
@@ -76,7 +99,13 @@ class ShowDialog extends StatelessWidget {
                             width: 40,
                             height: 40,
                           ),
-                          Text(refuses.toString()),
+                          Text(
+                            refuses.toString(),
+                            style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600,
+                                color: Color(0xff12a5c2)),
+                          ),
                         ],
                       )),
                   Container(
@@ -89,7 +118,14 @@ class ShowDialog extends StatelessWidget {
                             width: 40,
                             height: 40,
                           ),
-                          Text(refuses.toString()),
+                          Text(
+                            '',
+                            //date.toString(),
+                            style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600,
+                                color: Color(0xff12a5c2)),
+                          ),
                         ],
                       )),
                 ],

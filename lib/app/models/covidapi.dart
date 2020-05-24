@@ -1,3 +1,5 @@
+import 'package:intl/intl.dart';
+
 class CovidApi {
   List<Data> covid;
 

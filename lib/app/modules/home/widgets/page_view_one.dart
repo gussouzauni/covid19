@@ -22,15 +22,15 @@ class PageViewWidget extends StatelessWidget {
         children: <Widget>[
           CardWidget(
             color: 0xff7159c1,
-            image: IconsApp.iconEleven,
+            image: IconsApp.iconNine,
           ),
           CardWidget(
             color: 0xff483D8B,
-            image: IconsApp.iconEight,
+            image: IconsApp.iconTen,
           ),
           CardWidget(
             color: 0xff00BFFF,
-            image: IconsApp.iconNine,
+            image: IconsApp.iconEleven,
           ),
         ],
       ),
