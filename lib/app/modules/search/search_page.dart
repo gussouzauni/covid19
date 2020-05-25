@@ -13,7 +13,7 @@ class _SearchPageState extends State<SearchPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        children: <Widget>[Text('Tela 2')],
+        children: <Widget>[],
       ),
     );
   }

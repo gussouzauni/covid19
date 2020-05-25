@@ -14,6 +14,11 @@ class CovidApi {
     }
   }
 
+  String convertDate(String date) {
+    DateFormat dateFormat = DateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+    print(DateFormat.yMEd().format(dateFormat.parse(date)));
+  }
+
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     if (this.covid != null) {

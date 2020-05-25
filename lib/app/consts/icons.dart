@@ -11,4 +11,5 @@ class IconsApp {
   static final iconTen = 'lib/app/assets/icon2.svg';
   static final iconEleven = 'lib/app/assets/icon3.svg';
   static final iconThirteen = 'lib/app/assets/time.png';
+  static final iconFourteen = 'lib/app/assets/corona.svg';
 }

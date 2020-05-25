@@ -7,7 +7,6 @@ import 'package:api_rest1/app/modules/search/widgets/data_search.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:intl/intl.dart';
 import 'home_controller.dart';
 
 class HomePage extends StatefulWidget {
@@ -25,11 +24,10 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
   PageController _pageController;
   int _currentPageIndex;
   int _currentIndexDots;
+  CovidApi covidApi = CovidApi();
 
   @override
   void initState() {
-    print(DateFormat.Md('en_US').parse('31/03/1999'));
-
     _currentIndexDots = 0;
     _currentPageIndex = 0;
     _pageController = PageController();
