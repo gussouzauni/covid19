@@ -1,4 +1,5 @@
 import 'package:api_rest1/app/consts/icons.dart';
+import 'package:api_rest1/app/models/covidapi.dart';
 import 'package:flutter/material.dart';
 
 class ShowDialog extends StatelessWidget {
@@ -20,15 +21,15 @@ class ShowDialog extends StatelessWidget {
               state,
               style: TextStyle(
                   fontSize: 24,
-                  fontWeight: FontWeight.w600,
+                  fontWeight: FontWeight.w800,
                   color: Color(0xff12a5c2)),
               textAlign: TextAlign.center,
             ),
             content: Container(
-              height: double.maxFinite,
+              height: 330,
               width: double.maxFinite,
               decoration: new BoxDecoration(
-                  border: Border.all(color: Colors.amber, width: 2)),
+                  border: Border.all(color: Color(0xff12a5c2), width: 1)),
               child: ListView(
                 padding: const EdgeInsets.all(30.0),
                 children: <Widget>[
@@ -101,26 +102,6 @@ class ShowDialog extends StatelessWidget {
                           ),
                           Text(
                             refuses.toString(),
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w600,
-                                color: Color(0xff12a5c2)),
-                          ),
-                        ],
-                      )),
-                  Container(
-                      height: 70,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          Image.asset(
-                            IconsApp.iconThirteen,
-                            width: 40,
-                            height: 40,
-                          ),
-                          Text(
-                            '',
-                            //date.toString(),
                             style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.w600,
