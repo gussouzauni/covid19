@@ -45,7 +45,7 @@ class _ProfilePageState extends State<ProfilePage> {
                           padding: EdgeInsets.only(top: 10),
                         ),
                         Text(
-                          'Gustavo Souza aaaaaaaaaaaa',
+                          'Gustavo Souza',
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: 22,
@@ -58,14 +58,34 @@ class _ProfilePageState extends State<ProfilePage> {
               ],
             ),
           ),
-          SingleChildScrollView(
-            scrollDirection: Axis.vertical,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[],
+          Expanded(
+            child: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              padding: EdgeInsets.all(5.0),
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    height: size.height * 0.5,
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                            begin: Alignment.bottomLeft,
+                            end: Alignment.topRight,
+                            colors: [Color(0xffE0647B), Color(0xff12a5c2)])),
+                  ),
+                  Container(
+                    width: size.width,
+                    height: 100,
+                    color: Colors.deepOrangeAccent,
+                  ),
+                  Container(
+                    width: size.width,
+                    height: 100,
+                    color: Colors.greenAccent,
+                  ),
+                ],
+              ),
             ),
-          )
+          ),
         ],
       ),
     );
