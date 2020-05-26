@@ -2,7 +2,7 @@ import 'package:api_rest1/app/models/covidapi.dart';
 import 'package:api_rest1/app/modules/home/widgets/card_widget_covid.dart';
 import 'package:api_rest1/app/modules/home/widgets/my_dots_app.dart';
 import 'package:api_rest1/app/modules/home/widgets/page_view_one.dart';
-import 'package:api_rest1/app/modules/search/search_page.dart';
+import 'package:api_rest1/app/modules/profile/profile_page.dart';
 import 'package:api_rest1/app/modules/search/widgets/data_search.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
@@ -45,6 +45,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
     double _screenheight = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
+        elevation: 1,
         backgroundColor: const Color(0xff12a5c2),
         actions: <Widget>[
           IconButton(
@@ -123,11 +124,11 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
                   child: CardWidgetSvg()),
             ],
           ),
-          SearchPage(),
+          ProfilePage(),
         ],
       ),
       bottomNavigationBar: BottomNavyBar(
-        showElevation: false,
+        showElevation: true,
         selectedIndex: _currentPageIndex,
         onItemSelected: (index) {
           setState(() => _currentPageIndex = index);
@@ -140,7 +141,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
             icon: Icon(Icons.apps),
             title: Text(
               'Covid',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+              style: TextStyle(fontSize: 15),
             ),
             activeColor: Color(0xff12a5c2),
           ),
@@ -148,9 +149,9 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
               icon: Icon(Icons.person),
               title: Text(
                 'Perfil',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                style: TextStyle(fontSize: 15),
               ),
-              activeColor: Colors.purpleAccent),
+              activeColor: Color(0xff12a5c2)),
         ],
       ),
     );

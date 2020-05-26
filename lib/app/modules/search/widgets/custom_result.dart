@@ -32,7 +32,7 @@ class CustomResult extends StatelessWidget {
                       fit: BoxFit.cover,
                     ),
                     border: Border.all(
-                      color: const Color(0xff7159c1),
+                      color: const Color(0xff12a5c2),
                       width: 3,
                     ),
                     borderRadius: BorderRadius.circular(12),
@@ -42,9 +42,9 @@ class CustomResult extends StatelessWidget {
               Text(
                 text,
                 style: TextStyle(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 20,
-                    color: const Color(0xff7159c1)),
+                    fontWeight: FontWeight.w700,
+                    fontSize: 22,
+                    color: const Color(0xff12a5c2)),
               )
             ],
           ),

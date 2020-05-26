@@ -1,7 +1,8 @@
 import 'package:api_rest1/app/consts/icons.dart';
 import 'package:api_rest1/app/models/covidapi.dart';
 import 'package:api_rest1/app/modules/home/widgets/show_dialog.dart';
-import 'package:api_rest1/app/stores/covidapi_store.dart';
+import 'package:api_rest1/app/modules/stores/covidapi_store.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 

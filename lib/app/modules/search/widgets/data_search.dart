@@ -2,15 +2,24 @@ import 'package:api_rest1/app/modules/search/widgets/custom_result.dart';
 import 'package:flutter/material.dart';
 
 class DataSearch extends SearchDelegate<String> {
-  final cities = ['Itaperuna', 'Campos', 'Rio', 'São Paulo', 'Curitiba'];
-  final recentCities = ['Itaperuna', 'Campos', 'Rio'];
+  final citiesCovid = ['Itaperuna', 'Campos', 'Rio', 'São Paulo', 'Curitiba'];
+  final recentCities = [
+    'Itaperuna',
+    'Campos',
+    'Rio',
+    'Curitiba',
+    'Rio grande do Sul'
+  ];
   var city = '';
 
   @override
   List<Widget> buildActions(BuildContext context) {
     return [
       IconButton(
-        icon: Icon(Icons.clear),
+        icon: Icon(
+          Icons.clear,
+          color: Color(0xff12a5c2),
+        ),
         onPressed: () {
           query = '';
         },
@@ -22,7 +31,10 @@ class DataSearch extends SearchDelegate<String> {
   Widget buildLeading(BuildContext context) {
     // actions for app bar
     return IconButton(
-      icon: Icon(Icons.arrow_back_ios),
+      icon: Icon(
+        Icons.arrow_back_ios,
+        color: Color(0xff12a5c2),
+      ),
       onPressed: () {
         close(context, null);
       },
@@ -34,7 +46,7 @@ class DataSearch extends SearchDelegate<String> {
     return CustomResult(
       text: city,
       image:
-          'https://www.teclasap.com.br/wp-content/uploads/2011/09/city-x-town.png',
+          'https://www.gov.br/pt-br/noticias/saude-e-vigilancia-sanitaria/2020/03/entenda-a-diferenca-entre-coronavirus-covid-19-e-novo-coronavirus/mitosis-3876669_1920.jpg/@@images/10852f76-0ff0-436b-8ab0-f9ed27b09f9e.png',
     );
   }
 
@@ -42,14 +54,14 @@ class DataSearch extends SearchDelegate<String> {
   Widget buildSuggestions(BuildContext context) {
     final suggestionsList = query.isEmpty
         ? recentCities
-        : cities.where((p) => p.startsWith(query)).toList();
+        : citiesCovid.where((p) => p.startsWith(query)).toList();
     return ListView.builder(
       itemBuilder: (context, index) => ListTile(
         onTap: () {},
         leading: Padding(
           padding: const EdgeInsets.all(6.0),
           child: CircleAvatar(
-            radius: 20.0,
+            maxRadius: 25,
             backgroundImage: NetworkImage(
                 "https://img.dicasdehoteis.net/2017/12/amsterdam-hoteis-baratos-848x350.jpg"),
           ),
@@ -59,7 +71,7 @@ class DataSearch extends SearchDelegate<String> {
             Icons.arrow_forward_ios,
             size: 16,
           ),
-          color: Color(0xff7159c1),
+          color: Color(0xff12a5c2),
           onPressed: () {
             city = (suggestionsList[index]);
             showResults(context);
@@ -74,9 +86,9 @@ class DataSearch extends SearchDelegate<String> {
                 TextSpan(
                     text: suggestionsList[index].substring(query.length),
                     style: TextStyle(
-                        color: Color(0xff7159c1),
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16))
+                        color: Color(0xff12a5c2),
+                        fontWeight: FontWeight.w600,
+                        fontSize: 18))
               ]),
         ),
       ),
