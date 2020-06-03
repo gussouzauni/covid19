@@ -65,7 +65,7 @@ class _ProfilePageState extends State<ProfilePage> {
               child: Column(
                 children: <Widget>[
                   Container(
-                    height: size.height * 0.5,
+                    height: 100,
                     decoration: BoxDecoration(
                         gradient: LinearGradient(
                             begin: Alignment.bottomLeft,
