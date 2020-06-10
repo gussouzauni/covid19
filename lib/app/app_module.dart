@@ -1,4 +1,3 @@
-import 'package:api_rest1/app/modules/login/login_controller.dart';
 import 'package:api_rest1/app/modules/profile/profile_controller.dart';
 import 'package:api_rest1/app/app_controller.dart';
 import 'package:api_rest1/app/modules/home/home_controller.dart';
@@ -11,7 +10,6 @@ import 'package:api_rest1/app/modules/home/home_module.dart';
 class AppModule extends MainModule {
   @override
   List<Bind> get binds => [
-        Bind((i) => LoginController()),
         Bind((i) => ProfileController()),
         Bind((i) => HomeController()),
         Bind((i) => AppController()),
